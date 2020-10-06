@@ -1,6 +1,7 @@
-import promptly from 'promptly';
+import { printWelcome, getName, printGreeting } from './functions.js';
 
 export default async () => {
-  const name = await promptly.prompt('May I have your name?');
-  return name;
+  printWelcome();
+  const name = await getName();
+  printGreeting(name);
 };
