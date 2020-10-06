@@ -1,7 +1,6 @@
 import {
   getRandomInt,
-  askQuestion,
-  printIterateAnswerWrong,
+  checkIterationAnswer,
   printStatement,
 } from '../functions.js';
 import engine from '../index.js';
@@ -21,12 +20,7 @@ async function iterateGcd() {
   const num2 = getRandomInt(1, 100);
   const correctAnswer = getMaxCommonDivisor(num1, num2);
   printStatement(`Question: ${num1} ${num2}`);
-  const numAnswer = await askQuestion('Your answer:');
-  const right = numAnswer === `${correctAnswer}`;
-  if (!right) {
-    printIterateAnswerWrong(numAnswer, correctAnswer);
-  }
-  return right;
+  return checkIterationAnswer(correctAnswer);
 }
 
 export default async () => {

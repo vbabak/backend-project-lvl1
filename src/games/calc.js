@@ -1,7 +1,6 @@
 import {
   getRandomInt,
-  askQuestion,
-  printIterateAnswerWrong,
+  checkIterationAnswer,
   printStatement,
 } from '../functions.js';
 import engine from '../index.js';
@@ -24,12 +23,7 @@ async function iterateCalc() {
       break;
   }
   printStatement(`Question: ${num1} ${operation} ${num2}`);
-  const numAnswer = await askQuestion('Your answer:');
-  const right = numAnswer === `${correctAnswer}`;
-  if (!right) {
-    printIterateAnswerWrong(numAnswer, correctAnswer);
-  }
-  return right;
+  return checkIterationAnswer(correctAnswer);
 }
 
 export default async () => {
