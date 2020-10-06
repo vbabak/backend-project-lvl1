@@ -11,3 +11,6 @@
 
 ## Brain Greatest Common Divisor
 [![asciicast](https://asciinema.org/a/GhLAf39zs4qzP0wY7Loev9M4Z.svg)](https://asciinema.org/a/GhLAf39zs4qzP0wY7Loev9M4Z)
+
+## Brain Progression
+[![asciicast](https://asciinema.org/a/vmkyK2tHYppWjeKzHlzOWlt2o.svg)](https://asciinema.org/a/vmkyK2tHYppWjeKzHlzOWlt2o)

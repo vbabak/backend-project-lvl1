@@ -41,3 +41,12 @@ export async function getName() {
   const name = await askQuestion('May I have your name?');
   return name;
 }
+
+export async function checkIterationAnswer(correctAnswer) {
+  const numAnswer = await askQuestion('Your answer:');
+  const right = numAnswer === `${correctAnswer}`;
+  if (!right) {
+    printIterateAnswerWrong(numAnswer, correctAnswer);
+  }
+  return right;
+}
