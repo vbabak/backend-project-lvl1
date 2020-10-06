@@ -28,6 +28,10 @@ export function printIterateAnswerWrong(numAnswer, correctAnswer) {
   console.log(`'${numAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
 }
 
+export function printStatement(q) {
+  console.log(q);
+}
+
 export async function askQuestion(question) {
   const answer = await promptly.prompt(`${question}`);
   return answer;
