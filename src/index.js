@@ -5,14 +5,14 @@ import {
   printGreeting,
   printGameResults,
   printIterateAnswerRight,
+  printStatement,
 } from './functions.js';
 
-async function playGame(game) {
-  game.printInstructions();
+async function playGame(gameIterationAsyncFunc) {
   const numTries = 3;
   let numCorrectAnswers = 0;
   for (let i = 1; i <= numTries; i += 1) {
-    const correct = await game.iterateAnswer();
+    const correct = await gameIterationAsyncFunc();
     if (correct) {
       printIterateAnswerRight();
       numCorrectAnswers += 1;
@@ -23,11 +23,12 @@ async function playGame(game) {
   return numCorrectAnswers === numTries;
 }
 
-const engine = async (game) => {
+const engine = async (instructionStr, gameIterationAsyncFunc) => {
   printWelcome();
   const name = await getName();
   printGreeting(name);
-  const won = await playGame(game);
+  printStatement(instructionStr);
+  const won = await playGame(gameIterationAsyncFunc);
   printGameResults(won, name);
 };
 

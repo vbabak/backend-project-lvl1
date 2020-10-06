@@ -18,16 +18,7 @@ async function iterateEven() {
   return right;
 }
 
-const gameEven = {
-  printInstructions: () => {
-    printStatement('Answer "yes" if the number is even, otherwise answer "no".');
-  },
-  iterateAnswer: async () => {
-    const result = await iterateEven();
-    return result;
-  },
-};
-
 export default async () => {
-  await engine(gameEven);
+  const instructions = 'Answer "yes" if the number is even, otherwise answer "no".';
+  await engine(instructions, iterateEven);
 };

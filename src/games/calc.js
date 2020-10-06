@@ -32,16 +32,7 @@ async function iterateCalc() {
   return right;
 }
 
-const gameCalc = {
-  printInstructions: () => {
-    printStatement('What is the result of the expression?');
-  },
-  iterateAnswer: async () => {
-    const result = await iterateCalc();
-    return result;
-  },
-};
-
 export default async () => {
-  await engine(gameCalc);
+  const instructions = 'What is the result of the expression?';
+  await engine(instructions, iterateCalc);
 };
