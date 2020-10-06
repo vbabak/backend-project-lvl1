@@ -6,11 +6,7 @@ import {
 } from '../functions.js';
 import engine from '../index.js';
 
-function printInstructions() {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-}
-
-async function iterateAnswer() {
+async function iterateEven() {
   const numQuestion = getRandomInt(1, 100);
   const correctAnswer = numQuestion % 2 === 0 ? 'yes' : 'no';
   printStatement(`Question: ${numQuestion}`);
@@ -24,10 +20,10 @@ async function iterateAnswer() {
 
 const gameEven = {
   printInstructions: () => {
-    printInstructions();
+    printStatement('Answer "yes" if the number is even, otherwise answer "no".');
   },
   iterateAnswer: async () => {
-    const result = await iterateAnswer();
+    const result = await iterateEven();
     return result;
   },
 };

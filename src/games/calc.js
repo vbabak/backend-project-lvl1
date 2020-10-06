@@ -6,11 +6,7 @@ import {
 } from '../functions.js';
 import engine from '../index.js';
 
-function printInstructions() {
-  console.log('What is the result of the expression?');
-}
-
-async function iterateAnswer() {
+async function iterateCalc() {
   const num1 = getRandomInt(1, 100);
   const num2 = getRandomInt(1, 100);
   const opIdx = getRandomInt(0, 2);
@@ -38,10 +34,10 @@ async function iterateAnswer() {
 
 const gameCalc = {
   printInstructions: () => {
-    printInstructions();
+    printStatement('What is the result of the expression?');
   },
   iterateAnswer: async () => {
-    const result = await iterateAnswer();
+    const result = await iterateCalc();
     return result;
   },
 };
