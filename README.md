@@ -8,3 +8,6 @@
 
 ## Brain Calc
 [![asciicast](https://asciinema.org/a/DkDRFV7vtgh1FT1WM7I1j1c7K.svg)](https://asciinema.org/a/DkDRFV7vtgh1FT1WM7I1j1c7K)
+
+## Brain Greatest Common Divisor
+[![asciicast](https://asciinema.org/a/GhLAf39zs4qzP0wY7Loev9M4Z.svg)](https://asciinema.org/a/GhLAf39zs4qzP0wY7Loev9M4Z)
