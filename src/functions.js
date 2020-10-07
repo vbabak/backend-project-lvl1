@@ -4,32 +4,32 @@ export function getRandomInt(min, max) {
   return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min)) + Math.ceil(min));
 }
 
+export function printStatement(q) {
+  console.log(q);
+}
+
 export function printWelcome() {
-  console.log('Welcome to the Brain Games!');
+  printStatement('Welcome to the Brain Games!');
 }
 
 export function printGreeting(name) {
-  console.log(`Hello, ${name}`);
+  printStatement(`Hello, ${name}`);
 }
 
 export function printGameResults(won, name) {
   if (won) {
-    console.log(`Congratulations, ${name}!`);
+    printStatement(`Congratulations, ${name}!`);
   } else {
-    console.log(`Let's try again, ${name}!`);
+    printStatement(`Let's try again, ${name}!`);
   }
 }
 
 export function printIterateAnswerRight() {
-  console.log('Correct!');
+  printStatement('Correct!');
 }
 
 export function printIterateAnswerWrong(numAnswer, correctAnswer) {
-  console.log(`'${numAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-}
-
-export function printStatement(q) {
-  console.log(q);
+  printStatement(`'${numAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
 }
 
 export async function askQuestion(question) {
