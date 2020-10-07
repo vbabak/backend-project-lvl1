@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import game from '../src/games/even.js';
+import playGame from '../src/games/even.js';
 
-game().catch(console.error);
+playGame().catch(console.error);

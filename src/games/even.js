@@ -2,8 +2,8 @@ import {
   getRandomInt,
   checkIterationAnswer,
   printStatement,
-} from '../functions.js';
-import engine from '../index.js';
+} from '../commons.js';
+import startGameEngine from '../engine.js';
 
 async function iterateEven() {
   const numQuestion = getRandomInt(1, 100);
@@ -14,5 +14,5 @@ async function iterateEven() {
 
 export default async () => {
   const instructions = 'Answer "yes" if the number is even, otherwise answer "no".';
-  await engine(instructions, iterateEven);
+  await startGameEngine(instructions, iterateEven);
 };

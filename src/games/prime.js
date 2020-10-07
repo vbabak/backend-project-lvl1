@@ -2,8 +2,8 @@ import {
   getRandomInt,
   printStatement,
   checkIterationAnswer,
-} from '../functions.js';
-import engine from '../index.js';
+} from '../commons.js';
+import startGameEngine from '../engine.js';
 
 function isPrime(n) {
   for (let i = n - 1; i > 1; i -= 1) {
@@ -21,5 +21,5 @@ async function iterateProgression() {
 
 export default async () => {
   const instructions = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  await engine(instructions, iterateProgression);
+  await startGameEngine(instructions, iterateProgression);
 };

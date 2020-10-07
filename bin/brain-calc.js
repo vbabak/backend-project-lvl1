@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import game from '../src/games/calc.js';
+import playGame from '../src/games/calc.js';
 
-game().catch(console.error);
+playGame().catch(console.error);

@@ -2,8 +2,8 @@ import {
   getRandomInt,
   checkIterationAnswer,
   printStatement,
-} from '../functions.js';
-import engine from '../index.js';
+} from '../commons.js';
+import startGameEngine from '../engine.js';
 
 async function iterateCalc() {
   const num1 = getRandomInt(1, 100);
@@ -28,5 +28,5 @@ async function iterateCalc() {
 
 export default async () => {
   const instructions = 'What is the result of the expression?';
-  await engine(instructions, iterateCalc);
+  await startGameEngine(instructions, iterateCalc);
 };

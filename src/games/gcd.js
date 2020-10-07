@@ -2,8 +2,8 @@ import {
   getRandomInt,
   checkIterationAnswer,
   printStatement,
-} from '../functions.js';
-import engine from '../index.js';
+} from '../commons.js';
+import startGameEngine from '../engine.js';
 
 function getMaxCommonDivisor(n1, n2) {
   const min = Math.min(Math.abs(n1), Math.abs(n2));
@@ -25,5 +25,5 @@ async function iterateGcd() {
 
 export default async () => {
   const instructions = 'Find the greatest common divisor of given numbers.';
-  await engine(instructions, iterateGcd);
+  await startGameEngine(instructions, iterateGcd);
 };

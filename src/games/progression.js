@@ -2,8 +2,8 @@ import {
   getRandomInt,
   printStatement,
   checkIterationAnswer,
-} from '../functions.js';
-import engine from '../index.js';
+} from '../commons.js';
+import startGameEngine from '../engine.js';
 
 function getProgression(start, step) {
   const size = 10;
@@ -28,5 +28,5 @@ async function iterateProgression() {
 
 export default async () => {
   const instructions = 'What number is missing in the progression?';
-  await engine(instructions, iterateProgression);
+  await startGameEngine(instructions, iterateProgression);
 };

@@ -1,4 +1,4 @@
-import { printWelcome, getName, printGreeting } from './functions.js';
+import { printWelcome, getName, printGreeting } from './commons.js';
 
 export default async () => {
   printWelcome();

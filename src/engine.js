@@ -6,7 +6,7 @@ import {
   printGameResults,
   printIterateAnswerRight,
   printStatement,
-} from './functions.js';
+} from './commons.js';
 
 async function playGame(gameIterationAsyncFunc) {
   const numTries = 3;
@@ -23,7 +23,7 @@ async function playGame(gameIterationAsyncFunc) {
   return numCorrectAnswers === numTries;
 }
 
-const engine = async (instructionStr, gameIterationAsyncFunc) => {
+export default async (instructionStr, gameIterationAsyncFunc) => {
   printWelcome();
   const name = await getName();
   printGreeting(name);
@@ -31,5 +31,3 @@ const engine = async (instructionStr, gameIterationAsyncFunc) => {
   const won = await playGame(gameIterationAsyncFunc);
   printGameResults(won, name);
 };
-
-export default engine;
