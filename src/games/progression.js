@@ -8,8 +8,8 @@ import startGameEngine from '../engine.js';
 function getProgression(start, step) {
   const size = 10;
   const progression = [];
-  for (let i = 1; i <= size; i += 1) {
-    const next = start + (i - 1) * step;
+  for (let i = 0; i < size; i += 1) {
+    const next = start + i * step;
     progression.push(`${next}`);
   }
   return progression;
