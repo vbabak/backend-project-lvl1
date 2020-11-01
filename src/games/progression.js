@@ -10,7 +10,7 @@ function getProgression(start, step) {
   const progression = [];
   for (let i = 0; i < size; i += 1) {
     const next = start + i * step;
-    progression.push(`${next}`);
+    progression.push(next.toString());
   }
   return progression;
 }
