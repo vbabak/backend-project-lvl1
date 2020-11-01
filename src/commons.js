@@ -8,9 +8,7 @@ export function printStatement(q) {
   console.log(q);
 }
 
-export function printWelcome() {
-  printStatement('Welcome to the Brain Games!');
-}
+export const welcomePhrase = 'Welcome to the Brain Games!';
 
 export function printGreeting(name) {
   printStatement(`Hello, ${name}`);

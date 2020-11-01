@@ -1,6 +1,6 @@
 /* eslint-disable no-await-in-loop */
 import {
-  printWelcome,
+  welcomePhrase,
   getName,
   printGreeting,
   printGameResults,
@@ -24,7 +24,7 @@ async function playGame(gameIterationAsyncFunc) {
 }
 
 export default async (instructionStr, gameIterationAsyncFunc) => {
-  printWelcome();
+  printStatement(welcomePhrase);
   const name = await getName();
   printGreeting(name);
   printStatement(instructionStr);
