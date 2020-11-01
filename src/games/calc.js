@@ -8,7 +8,8 @@ import startGameEngine from '../engine.js';
 async function iterateCalc() {
   const num1 = getRandomInt(1, 100);
   const num2 = getRandomInt(1, 100);
-  const opIdx = getRandomInt(0, 2);
+  const operations = ['+', '-', '*'];
+  const opIdx = getRandomInt(0, operations.length - 1);
   const operation = ['+', '-', '*'][opIdx];
   let correctAnswer;
   switch (operation) {
