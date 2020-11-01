@@ -6,7 +6,9 @@ import {
 import startGameEngine from '../engine.js';
 
 function isPrime(n) {
-  for (let i = n - 1; i > 1; i -= 1) {
+  if (n < 2) return false;
+  for (let i = 2; i < n; i += 1) {
+    if (i > n / 2) return true;
     if (n % i === 0) return false;
   }
   return true;
