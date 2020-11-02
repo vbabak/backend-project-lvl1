@@ -5,7 +5,7 @@ import {
 function isPrime(n) {
   if (n < 2) return false;
   const maxDivisor = n / 2;
-  for (let i = 2; i < maxDivisor; i += 1) {
+  for (let i = 2; i <= maxDivisor; i += 1) {
     if (n % i === 0) return false;
   }
   return true;
