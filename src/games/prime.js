@@ -4,8 +4,8 @@ import {
 
 function isPrime(n) {
   if (n < 2) return false;
-  for (let i = 2; i < n; i += 1) {
-    if (i > n / 2) return true;
+  const maxDivisor = n / 2;
+  for (let i = 2; i < maxDivisor; i += 1) {
     if (n % i === 0) return false;
   }
   return true;
