@@ -40,11 +40,12 @@ export async function getName() {
   return name;
 }
 
-export async function checkIterationAnswer(correctAnswer) {
+export async function getIterationAnswer() {
   const numAnswer = await askQuestion('Your answer:');
-  const right = numAnswer === `${correctAnswer}`;
-  if (!right) {
-    printIterateAnswerWrong(numAnswer, correctAnswer);
-  }
-  return right;
+  return numAnswer;
+}
+
+export function isAnswerCorrect(yourAnser, correctAnswer) {
+  const correct = yourAnser === correctAnswer.toString();
+  return correct;
 }

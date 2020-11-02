@@ -1,7 +1,12 @@
-import { printWelcome, getName, printGreeting } from './commons.js';
+import {
+  printStatement,
+  welcomePhrase,
+  getName,
+  printGreeting,
+} from './commons.js';
 
 export default async () => {
-  printWelcome();
+  printStatement(welcomePhrase);
   const name = await getName();
   printGreeting(name);
 };

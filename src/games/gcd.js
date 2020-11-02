@@ -1,9 +1,6 @@
 import {
   getRandomInt,
-  checkIterationAnswer,
-  printStatement,
 } from '../commons.js';
-import startGameEngine from '../engine.js';
 
 function getMaxCommonDivisor(n1, n2) {
   const min = Math.min(Math.abs(n1), Math.abs(n2));
@@ -15,15 +12,19 @@ function getMaxCommonDivisor(n1, n2) {
   return 1;
 }
 
-async function iterateGcd() {
+function iterateGcd() {
   const num1 = getRandomInt(1, 100);
   const num2 = getRandomInt(1, 100);
   const correctAnswer = getMaxCommonDivisor(num1, num2);
-  printStatement(`Question: ${num1} ${num2}`);
-  return checkIterationAnswer(correctAnswer);
+  return {
+    question: `Question: ${num1} ${num2}`,
+    correctAnswer,
+  };
 }
 
-export default async () => {
-  const instructions = 'Find the greatest common divisor of given numbers.';
-  await startGameEngine(instructions, iterateGcd);
+const game = {
+  instructions: 'Find the greatest common divisor of given numbers.',
+  iterate: iterateGcd,
 };
+
+export default game;

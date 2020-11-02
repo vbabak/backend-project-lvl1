@@ -1,11 +1,8 @@
 import {
   getRandomInt,
-  checkIterationAnswer,
-  printStatement,
 } from '../commons.js';
-import startGameEngine from '../engine.js';
 
-async function iterateCalc() {
+function iterateCalc() {
   const num1 = getRandomInt(1, 100);
   const num2 = getRandomInt(1, 100);
   const operations = ['+', '-', '*'];
@@ -23,11 +20,15 @@ async function iterateCalc() {
       correctAnswer = num1 * num2;
       break;
   }
-  printStatement(`Question: ${num1} ${operation} ${num2}`);
-  return checkIterationAnswer(correctAnswer);
+  return {
+    question: `Question: ${num1} ${operation} ${num2}`,
+    correctAnswer,
+  };
 }
 
-export default async () => {
-  const instructions = 'What is the result of the expression?';
-  await startGameEngine(instructions, iterateCalc);
+const game = {
+  instructions: 'What is the result of the expression?',
+  iterate: iterateCalc,
 };
+
+export default game;

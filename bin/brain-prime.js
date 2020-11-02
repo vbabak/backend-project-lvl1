@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import playGame from '../src/games/prime.js';
+import game from '../src/games/prime.js';
+import startGame from '../src/engine.js';
 
-playGame().catch(console.error);
+startGame(game.instructions, game.iterate).catch(console.error);

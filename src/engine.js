@@ -6,17 +6,24 @@ import {
   printGameResults,
   printIterateAnswerRight,
   printStatement,
+  getIterationAnswer,
+  printIterateAnswerWrong,
+  isAnswerCorrect,
 } from './commons.js';
 
 async function playGame(gameIterationAsyncFunc) {
   const numTries = 3;
   let numCorrectAnswers = 0;
   for (let i = 1; i <= numTries; i += 1) {
-    const correct = await gameIterationAsyncFunc();
-    if (correct) {
+    const { question, correctAnswer } = gameIterationAsyncFunc();
+    printStatement(question);
+    const yourAnser = await getIterationAnswer();
+    const isCorrect = isAnswerCorrect(yourAnser, correctAnswer);
+    if (isCorrect) {
       printIterateAnswerRight();
       numCorrectAnswers += 1;
     } else {
+      printIterateAnswerWrong(yourAnser, correctAnswer);
       return false;
     }
   }

@@ -1,18 +1,19 @@
 import {
   getRandomInt,
-  checkIterationAnswer,
-  printStatement,
 } from '../commons.js';
-import startGameEngine from '../engine.js';
 
-async function iterateEven() {
+function iterateEven() {
   const numQuestion = getRandomInt(1, 100);
   const correctAnswer = numQuestion % 2 === 0 ? 'yes' : 'no';
-  printStatement(`Question: ${numQuestion}`);
-  return checkIterationAnswer(correctAnswer);
+  return {
+    question: `Question: ${numQuestion}`,
+    correctAnswer,
+  };
 }
 
-export default async () => {
-  const instructions = 'Answer "yes" if the number is even, otherwise answer "no".';
-  await startGameEngine(instructions, iterateEven);
+const game = {
+  instructions: 'Answer "yes" if the number is even, otherwise answer "no".',
+  iterate: iterateEven,
 };
+
+export default game;
